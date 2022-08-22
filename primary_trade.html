@@ -21,8 +21,9 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
-    <div class="container">
+    <div class="container" id="blur">
       <header>
         <h2>Extimator</h2>
       </header>
@@ -34,6 +35,7 @@
 
         <div class="create_account">
           <div class="create_steps">
+            
             <div class="steps">
               <p class="active_level">1</p>
               <p>Create Account</p>
@@ -114,14 +116,28 @@
               </div>
             </div>
 
-            <a href="#" class="SignUpBtn">Create account</a>
+            <a href="#" class="SignUpBtn" onclick="toggle()">Create account</a>
           </div>
-
-          <div class="popup">
-            
-          </div>
-
       </main>
     </div>
+    
+    <div class="popup" id="popup">
+      <h2>Congratulations</h2>
+      <p>you have successfully created an account</p>
+      <i class="fa-solid fa-square-xmark fa-xl" id="cancel" onclick="toggle()"></i>
+      <img src="img/smiley.png">
+      <a href="login.html">go to dashboard</a>
+    </div>
+
+
+    <script type="text/javascript">
+      function toggle(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active');
+      }
+
+    </script>
   </body>
 </html>
